@@ -31,3 +31,21 @@ training.log
 # 临时文件
 *.tmp
 *.bak
+
+# OpenCode 技能目录（包含嵌套 Git 和 node_modules）
+.opencode/
+
+# 模型文件（太大）
+models/official/*.pth
+*.bin
+*.safetensors
+
+# 测试输出
+test_output*.png
+final_test_output.png
+
+# egg-info
+*.egg-info/
+
+# 临时变量
+%TEMP%*/
