@@ -1,0 +1,35 @@
+# StyleShift Training Configuration
+# ==================================
+
+# Dataset settings
+content_root: "data/coco"       # MS-COCO content images
+style_root: "data/wikiart"      # WikiArt style images
+image_size: 256                 # Training image size
+
+# Training hyperparameters
+epochs: 16                      # Number of epochs
+batch_size: 8                   # Batch size
+learning_rate: 0.0001           # Initial LR (1e-4)
+lr_decay: 0.00005               # LR decay per iteration
+
+# Loss weights (AdaIN official: style:content = 10:1)
+content_weight: 1.0             # Content loss weight (alpha)
+style_weight: 10.0              # Style loss weight (beta)
+tv_weight: 0.000001             # TV loss weight (gamma)
+
+# Optimizer settings
+betas: [0.9, 0.999]             # Adam betas
+
+# Checkpointing
+save_dir: "checkpoints"         # Checkpoint directory
+save_every: 1                   # Save every N epochs
+keep_last: 3                    # Keep last N checkpoints
+
+# Monitoring
+log_dir: "runs"                 # TensorBoard logs
+log_every: 10                   # Log every N steps
+validate_every: 1               # Validate every N epochs
+
+# Data loading
+num_workers: 4                  # DataLoader workers
+pin_memory: true                # Pin memory for GPU
